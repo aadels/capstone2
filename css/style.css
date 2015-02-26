@@ -442,7 +442,7 @@ header .fullheight .hgroup p img {
   width: auto;
   overflow: hidden;
 }
-#business .snowpic1{
+#business .snowpic1, #business .colorpic1{
   position: absolute;
   width: 100%;
   height: auto;

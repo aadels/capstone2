@@ -6,7 +6,8 @@
   var wheight = $(window).height(); //get height of the window
   var wwidth = $(window).width(); //get width of the window
   $('.fullheight').css('height', wheight);
-  $('.75height').css('height', wheight * .75);
+  $('.fullwidth').css('width', wwidth);
+  $('.50height').css('height', wheight * .50);
   $('.panelpic').css('width', wwidth * .25);
 
   $(window).resize(function() {
@@ -41,77 +42,40 @@
         triggerHook: "onLeave"
       }
     });
-    /*tween variables
-    establish current slide index at start*/
-    var rightPositionStart1;
-    var rightPositionStart2;
-    var rightPositionStart3;
-    var leftPositionStart1;
-    var rightPositionEnd1;
-    var rightPositionEnd2;
-    var rightPositionEnd3;
-    var rightPositionEnd4;
-    var leftPositionEnd1;
-    var leftPositionEnd2;
-    var leftPositionEnd3;
-    var leftPositionEnd4;
-
-    rightPositionStart1 = 150;
-    rightPositionStart2 = 30;
-    rightPositionEnd1 = 75;
-    rightPositionEnd2 = 50;
-    rightPositionEnd3 = 25;
-    rightPositionEnd4 = 0;
-
-
-    leftPositionStart1 = 125;
-    leftPositionStart2 = 150;
-    leftPositionEnd1 = -50;
-    leftPositionEnd2 = 50;
-    leftPositionEnd3 = 0;
-    leftPositionEnd4 = 75;
     
  //fluff tweens
-  var flufftween = TweenMax.staggerFromTo('#community .smpic', 4, 
+  var flufftween = TweenMax.staggerFromTo('#community .smpic', 5, 
     { 
-      right:rightPositionStart2 + "%" ,
-      opacity: 0 
-    }, 
-    {
-      delay: 1,
-      right:rightPositionStart2 + "%",
-      opacity: 1, 
-      ease: Back.easeOut
-    });
+      right: 20 + "%" ,
+      bottom: -120 + "%" 
 
-  var flufftween2 = TweenMax.staggerFromTo('#community .smpic', 5, 
-    { 
-      right:rightPositionStart2 + "%",
-      opacity: 1 
     }, 
     {
-      right:rightPositionStart2 + "%",
-      delay: 25,
-      opacity: 0, 
-      ease: Back.easeOut
-    });  
-  
-  var fluffguytween = TweenMax.staggerFromTo('#community .lgpic', .5, 
- { 
-      left:leftPositionStart1 + "%" 
-    }, 
-    {
-      left:leftPositionEnd2 + "%",
-      delay: 10,
+      right: 40 + "%",
+      bottom: 40 + "%",
+      delay: 7, 
       ease: Cubic.easeOut
     });
 
-  var fluffdancertween = TweenMax.staggerFromTo('#community .lgpic2', .5, 
+    var flufftween2 = TweenMax.staggerFromTo('#community .smpic', 5, 
     { 
-      right:rightPositionStart1 + "%" 
+      right: 40 + "%",
+      bottom: 40 + "%",
+
     }, 
     {
-      right:rightPositionEnd2 + "%" ,
+      right: 60 + "%",
+      bottom: 150 + "%",
+      delay: 15, 
+      ease: Cubic.easeOut
+    });
+
+  var fluffdancertween = TweenMax.staggerFromTo('#community .lgpic2', 3, 
+    { 
+      bottom: -150 + "%" 
+    }, 
+    {
+      bottom: -5 + "%" ,
       ease: Cubic.easeOut
     });
 
@@ -120,22 +84,19 @@
     .setPin("#community")
     .addTo(controller2);
 
-  var scene1a = new ScrollScene({triggerElement: '#community', duration: 1200}) 
+  var scene1a = new ScrollScene({triggerElement: '#community', duration: 1600}) 
     .setTween(flufftween)
     .addTo(controller2);
 
-  var scene1b = new ScrollScene({triggerElement: "#community", duration: 7000})
-
-    .setTween(fluffguytween)
+  var scene1b = new ScrollScene({triggerElement: '#community', duration: 4000}) 
+    .setTween(flufftween2)
     .addTo(controller2);
-
-  var scene1c = new ScrollScene({triggerElement: '#community', duration: 8000}) 
+  
+  var scene1c = new ScrollScene({triggerElement: '#community', duration: 1200}) 
     .setTween(fluffdancertween)
     .addTo(controller2);
 
-  var scene1d = new ScrollScene({triggerElement: '#community', duration: 9000}) 
-    .setTween(flufftween2)
-    .addTo(controller2);
+
 
 
     //business tweens
@@ -149,74 +110,83 @@
     });
     var buildingtween1 = TweenMax.staggerFromTo('#business #mural', 3, 
     { 
-      right:rightPositionStart1 + "%" 
+      right: 150 + "%" 
     }, 
     {
-      right:rightPositionEnd1 + "%",
+      right:75 + "%",
       delay: 11,
       ease: Cubic.easeOut
     });
 
     var buildingtween2 = TweenMax.staggerFromTo('#business #scatv', 4, 
     { 
-      right:rightPositionStart1 + "%"
+      right:150 + "%"
 
     }, 
     {
-      right:rightPositionEnd2 + "%",
+      right:50 + "%",
       delay: 11,
       ease: Cubic.easeOut
     });
 
     var buildingtween3 = TweenMax.staggerFromTo('#business #mamagina', 5, 
     { 
-      right:rightPositionStart1 + "%"
+      right:150 + "%"
     }, 
     {
-      right:rightPositionEnd3 + "%",
+      right: 25 + "%",
       delay: 11,
       ease: Cubic.easeOut
     });
 
     var buildingtween4 = TweenMax.staggerFromTo('#business #grooves', 10, 
     { 
-      right:rightPositionStart1 + "%"
+      right:150 + "%"
     }, 
     {
-      right:rightPositionEnd4 + "%",
+      right: 0 + "%",
       delay: 11,
       ease: Cubic.easeOut
     });
     
     var snowtween1 = TweenMax.staggerFromTo('#business #snowday', 2, 
     { 
-      left:leftPositionStart1 + "%" 
+      left: 125 + "%" 
     }, 
     {
-      left:leftPositionEnd3 + "%",
+      left: 0 + "%",
       delay: 16,
       ease: Cubic.easeOut
     });
 
     var snowtween2 = TweenMax.staggerFromTo('#business #snowbank2', 2, 
     { 
-      right:rightPositionStart1 + "%" 
+      right: 150 + "%" 
     }, 
     {
-      right:rightPositionEnd4 + "%" ,
+      right: 0 + "%" ,
       delay: 15,
       ease: Cubic.easeOut
     });
     var snowtween3 = TweenMax.staggerFromTo('#business #snowbank1', 2, 
     { 
-      left:leftPositionStart1 + "%" 
+      left: 125 + "%" 
     }, 
     {
-      left:leftPositionEnd2 + "%",
+      left: 50 + "%",
       delay: 16,
       ease: Cubic.easeOut
     });
 
+    var snowtween4 = TweenMax.staggerFromTo('#business #snowmonster', 2, 
+    { 
+      bottom: -150 + "%" 
+    }, 
+    {
+      bottom: 0 + "%",
+      delay: 18,
+      ease: Cubic.easeOut
+    });
 
     
     //Create scenes, set pins, trigger when images are visible, and add to controller
@@ -255,6 +225,11 @@
     var scene2h = new ScrollScene({triggerElement: '#business', duration: 14000}) 
       .setTween(snowtween3)
       .addTo(controller2);
+        
+    var scene21 = new ScrollScene({triggerElement: '#business', duration: 16000}) 
+      .setTween(snowtween4)
+      .addTo(controller2);
+
 
     
 
