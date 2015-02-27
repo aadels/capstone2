@@ -384,7 +384,7 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 /* line 12, ../../../components/sass/modules/_community.scss */
-#community .lgpic, #community .lgpic2, #community .lgpic3, #community .lgpic4, #community .lgpic5, #community .smpic {
+#community .lgpic, #community .smpic {
   position: absolute;
 }
 
@@ -436,20 +436,21 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 /* line 11, ../../../components/sass/modules/_business.scss */
-#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4{
+#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .snowpic4{
   position: absolute;
   height: 100%;
   width: auto;
   overflow: hidden;
 }
-#business .snowpic1, #business .colorpic1{
+
+#business .snowpic1, #business .snowpic2, #business .snowpic3,#business .colorpic1{
   position: absolute;
   width: 100%;
   height: auto;
   overflow: hidden;
   bottom: 0;
 }
-/* line 1, ../../../components/sass/modules/_attractions.scss */
+/* line 1, ../../../components/sass/modules/_attractions.scss 
 #attractions {
   background-image: url("../images/union/webster.jpg");
   width: 100%;
@@ -461,7 +462,7 @@ header .fullheight .hgroup p img {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-}
+}*/
 /* line 3, ../../../components/sass/_mixins.scss */
 #attractions:before, #attractions:after {
   content: '';
@@ -531,6 +532,14 @@ footer #socialmedia ul li img {
   min-height: 10%;
   padding: 0;
   vertical-align: bottom;
+}
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 10%;
+  width: auto; height: auto; z-index: -100;
+  background: url(../images/fmstill.jpg) no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 /* .clearfix {
   &:before,

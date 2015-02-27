@@ -8,16 +8,18 @@
   $('.fullheight').css('height', wheight);
   $('.fullwidth').css('width', wwidth);
   $('.50height').css('height', wheight * .50);
+  $('.50width').css('width', wwidth * .50);
   $('.panelpic').css('width', wwidth * .25);
+  
 
   $(window).resize(function() {
   var wheight = $(window).height(); //get height of the window
   var wwidth = $(window).width(); //get width of the window
   $('.fullheight').css('height', wheight);
-  $('.75height').css('height', wheight * .75);
+  $('.50height').css('height', wheight * .50);
+  $('.50width').css('width', wwidth * .50);
+  $('.fullwidth').css('width', wwidth);
   $('.panelpic').css('width', wwidth * .25);
- 
-
 
   }) //on resize
 
@@ -52,25 +54,25 @@
     }, 
     {
       right: 40 + "%",
-      bottom: 40 + "%",
-      delay: 7, 
+      bottom: 50 + "%",
+      delay: 9, 
       ease: Cubic.easeOut
     });
 
     var flufftween2 = TweenMax.staggerFromTo('#community .smpic', 5, 
     { 
       right: 40 + "%",
-      bottom: 40 + "%",
+      bottom: 50 + "%",
 
     }, 
     {
       right: 60 + "%",
       bottom: 150 + "%",
-      delay: 15, 
+      delay: 17, 
       ease: Cubic.easeOut
     });
 
-  var fluffdancertween = TweenMax.staggerFromTo('#community .lgpic2', 3, 
+  var fluffdancertween = TweenMax.staggerFromTo('#community .lgpic', 3, 
     { 
       bottom: -150 + "%" 
     }, 
@@ -100,7 +102,7 @@
 
 
     //business tweens
-    var colortween1 = TweenMax.staggerFromTo('#business #red', 7, 
+    var colortween1 = TweenMax.staggerFromTo('#business .colorpic1', 7, 
     { 
       opacity: 0
     }, 
@@ -108,7 +110,7 @@
       opacity: .75,
       delay: 2,
     });
-    var buildingtween1 = TweenMax.staggerFromTo('#business #mural', 3, 
+    var buildingtween1 = TweenMax.staggerFromTo('#business .bldgpic1', 3, 
     { 
       right: 150 + "%" 
     }, 
@@ -118,7 +120,7 @@
       ease: Cubic.easeOut
     });
 
-    var buildingtween2 = TweenMax.staggerFromTo('#business #scatv', 4, 
+    var buildingtween2 = TweenMax.staggerFromTo('#business .bldgpic2', 4, 
     { 
       right:150 + "%"
 
@@ -129,7 +131,7 @@
       ease: Cubic.easeOut
     });
 
-    var buildingtween3 = TweenMax.staggerFromTo('#business #mamagina', 5, 
+    var buildingtween3 = TweenMax.staggerFromTo('#business .bldgpic3', 5, 
     { 
       right:150 + "%"
     }, 
@@ -139,7 +141,7 @@
       ease: Cubic.easeOut
     });
 
-    var buildingtween4 = TweenMax.staggerFromTo('#business #grooves', 10, 
+    var buildingtween4 = TweenMax.staggerFromTo('#business .bldgpic4', 10, 
     { 
       right:150 + "%"
     }, 
@@ -149,7 +151,7 @@
       ease: Cubic.easeOut
     });
     
-    var snowtween1 = TweenMax.staggerFromTo('#business #snowday', 2, 
+    var snowtween1 = TweenMax.staggerFromTo('#business .snowpic1', 2, 
     { 
       left: 125 + "%" 
     }, 
@@ -159,31 +161,33 @@
       ease: Cubic.easeOut
     });
 
-    var snowtween2 = TweenMax.staggerFromTo('#business #snowbank2', 2, 
+    var snowtween2 = TweenMax.staggerFromTo('#business .snowpic2', 2, 
     { 
       right: 150 + "%" 
     }, 
     {
-      right: 0 + "%" ,
+      right: 25 + "%" ,
       delay: 15,
       ease: Cubic.easeOut
     });
-    var snowtween3 = TweenMax.staggerFromTo('#business #snowbank1', 2, 
+    var snowtween3 = TweenMax.staggerFromTo('#business .snowpic3', 2, 
     { 
       left: 125 + "%" 
     }, 
     {
-      left: 50 + "%",
+      left: 25 + "%",
       delay: 16,
       ease: Cubic.easeOut
     });
 
-    var snowtween4 = TweenMax.staggerFromTo('#business #snowmonster', 2, 
+    var snowtween4 = TweenMax.staggerFromTo('#business .snowpic4', 2, 
     { 
-      bottom: -150 + "%" 
+      bottom: -150 + "%",
+      left: 25 + "%"
     }, 
     {
       bottom: 0 + "%",
+      left: 25 + "%",
       delay: 18,
       ease: Cubic.easeOut
     });
