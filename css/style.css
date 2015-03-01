@@ -374,6 +374,7 @@ header .fullheight .hgroup p img {
   background-repeat: no-repeat;
 
 }
+
 /* line 3, ../../../components/sass/_mixins.scss */
 #community:before, #community:after {
   content: '';
@@ -534,12 +535,10 @@ footer #socialmedia ul li img {
   vertical-align: bottom;
 }
 video#bgvid {
-  position: fixed; right: 0; bottom: 0;
-  min-width: 100%; min-height: 10%;
-  width: auto; height: auto; z-index: -100;
-  background: url(../images/fmstill.jpg) no-repeat;
+ 
+  min-width: 100%; min-height: 100%;
+  background: url(../images/farmersmarket/fmstill.jpg) no-repeat;
   background-size: cover;
-  overflow: hidden;
 }
 /* .clearfix {
   &:before,
