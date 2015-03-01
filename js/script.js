@@ -10,7 +10,7 @@
   $('.50height').css('height', wheight * .50);
   $('.50width').css('width', wwidth * .50);
   $('.panelpic').css('width', wwidth * .25);
-  
+  $("#bgvid2").width=document.body.offsetWidth;
 
   $(window).resize(function() {
   var wheight = $(window).height(); //get height of the window
@@ -20,6 +20,7 @@
   $('.50width').css('width', wwidth * .50);
   $('.fullwidth').css('width', wwidth);
   $('.panelpic').css('width', wwidth * .25);
+  $("#bgvid2").width=document.body.offsetWidth;
 
   }) //on resize
 
@@ -81,8 +82,28 @@
       ease: Cubic.easeOut
     });
 
+  var fmtween1 = TweenMax.staggerFromTo('#community .lgpic2', 8, 
+    { 
+      left: 125 + "%" 
+    }, 
+    {
+      left: 0 + "%",
+      delay: 20,
+      ease: Cubic.easeOut
+    });
+  
+  var fmtween2 = TweenMax.staggerFromTo('#community .lgpic3', 9, 
+    { 
+      bottom: -150 + "%" 
+    }, 
+    {
+      bottom: -5 + "%" ,
+      delay: 24,
+      ease: Cubic.easeOut
+    });
+
   ////Create scenes, set pins, trigger when images are visible, and add to controller
-  var scene1 = new ScrollScene({triggerElement: "#community", duration: 14000})
+  var scene1 = new ScrollScene({triggerElement: "#community", duration: 9000})
     .setPin("#community")
     .addTo(controller2);
 
@@ -96,6 +117,14 @@
   
   var scene1c = new ScrollScene({triggerElement: '#community', duration: 1200}) 
     .setTween(fluffdancertween)
+    .addTo(controller2);
+
+  var scene1d = new ScrollScene({triggerElement: '#community', duration: 6000}) 
+    .setTween(fmtween1)
+    .addTo(controller2);
+
+  var scene1e = new ScrollScene({triggerElement: '#community', duration: 8000}) 
+    .setTween(fmtween2)
     .addTo(controller2);
 
 
@@ -247,7 +276,7 @@
     new ScrollScene({triggerElement: "#housing"})
             .setTween(TweenMax.from("#housing > div", 1, {top: "-60%", ease: Linear.easeNone}))
             .addTo(controller);
-            //.addIndicators({zindex: 1, suffix: "1"});
+
 
     new ScrollScene({triggerElement: "#maps"})
             .setTween(TweenMax.from("#maps > div", 1, {top: "-60%", ease: Linear.easeNone}))
@@ -256,5 +285,17 @@
     new ScrollScene({triggerElement: "#transit"})
             .setTween(TweenMax.from("#transit > div", 1, {top: "-40%", ease: Linear.easeNone}))
             .addTo(controller);
-            //.addIndicators({zindex: 1, suffix: "2"});
+
+    new ScrollScene({triggerElement: "#market1"})
+            .setTween(TweenMax.from("#market1 > div", 1, {top: "-60%", ease: Linear.easeNone}))
+            .addTo(controller);
+
+    new ScrollScene({triggerElement: "#market2"})
+            .setTween(TweenMax.from("#market2 > div", 1, {top: "-60%", ease: Linear.easeNone}))
+            .addTo(controller);
+    
+    new ScrollScene({triggerElement: "#market3"})
+            .setTween(TweenMax.from("#market3 > div", 1, {top: "-40%", ease: Linear.easeNone}))
+            .addTo(controller);
+
 });

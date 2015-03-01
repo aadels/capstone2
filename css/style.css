@@ -370,7 +370,7 @@ header .fullheight .hgroup p img {
   padding: 0;
   z-index: 1;
   background-image: url("../images/union/fluff3.jpg");
-  background-size: 100% auto;
+background-size: cover;
   background-repeat: no-repeat;
 
 }
@@ -389,7 +389,7 @@ header .fullheight .hgroup p img {
   position: absolute;
 }
 
-#maps, #housing, #transit {
+#maps, #housing, #transit, #market1, #market2, #market3 {
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -402,7 +402,6 @@ header .fullheight .hgroup p img {
   overflow: hidden;
 }
 
-/* line 11, ../../../components/sass/modules/_maps.scss */
 #maps > div, #housing > div, #transit > div  {
   position: relative;
   height: 200%;
@@ -410,7 +409,13 @@ header .fullheight .hgroup p img {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
 }
-
+#market1 > div, #market2 > div, #market3 > div  {
+  position: relative;
+  height: 200%;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
 /* line 1, ../../../components/sass/modules/_business.scss */
 #business {
   -moz-box-sizing: border-box;
@@ -443,8 +448,7 @@ header .fullheight .hgroup p img {
   width: auto;
   overflow: hidden;
 }
-
-#business .snowpic1, #business .snowpic2, #business .snowpic3,#business .colorpic1{
+#community .lgpic3, #community .lgpic2, #business .snowpic1, #business .snowpic2, #business .snowpic3,#business .colorpic1{
   position: absolute;
   width: 100%;
   height: auto;
@@ -530,15 +534,19 @@ footer #socialmedia ul li img {
 
 .spacerpic {
   width: 100%;
-  min-height: 10%;
+  
+  height: 10%;
   padding: 0;
   vertical-align: bottom;
+  overflow:hidden;
 }
-video#bgvid {
+video#bgvid2 {
  
   min-width: 100%; min-height: 100%;
-  background: url(../images/farmersmarket/fmstill.jpg) no-repeat;
+  background: url(../images/farmersmarket/fmstill4.jpg) no-repeat;
   background-size: cover;
+
+
 }
 /* .clearfix {
   &:before,
