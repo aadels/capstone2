@@ -370,7 +370,7 @@ header .fullheight .hgroup p img {
   padding: 0;
   z-index: 1;
   background-image: url("../images/union/fluff3.jpg");
-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 
 }
@@ -402,13 +402,6 @@ background-size: cover;
   overflow: hidden;
 }
 
-#maps > div, #housing > div, #transit > div  {
-  position: relative;
-  height: 200%;
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-}
 #market1 > div, #market2 > div, #market3 > div  {
   position: relative;
   height: 200%;
@@ -416,7 +409,34 @@ background-size: cover;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
 }
-/* line 1, ../../../components/sass/modules/_business.scss */
+
+#events {
+   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+  background-image: url("../images/events/brazilhaiti.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* line 3, ../../../components/sass/_mixins.scss */
+#events:before, #events:after {
+  content: '';
+  display: table;
+}
+/* line 8, ../../../components/sass/_mixins.scss */
+#events:after {
+  clear: both;
+}
+
+
 #business {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
