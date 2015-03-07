@@ -505,11 +505,20 @@ header .fullheight .hgroup p img {
 #tour1:after {
   clear: both;
 }
-#map-canvas { 
-  height: 100%; 
-  width: 100%
+#tour1 #map1 {  
+  width: 50%;
+  height: 100%;
+  float: left;
+  border-style: solid;
+  border-width: medium;
+  border-color: #fff;
+} 
+#tour1 #map2 {  
+  width: 50%;
+  height: 100%;
+  float: right;
+} 
 
-}
 
 /* line 1, ../../../components/sass/modules/_footer.scss */
 footer {
