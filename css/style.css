@@ -475,7 +475,7 @@ header .fullheight .hgroup p img {
   overflow: hidden;
   bottom: 0;
 }
-#attractions .map{
+#tour1 .map{
   position: absolute;
   width: 100%;
   height: auto;
@@ -483,9 +483,9 @@ header .fullheight .hgroup p img {
   bottom: 0;
 
 }
-/* line 1, ../../../components/sass/modules/_attractions.scss 
-#attractions {
-  background-image: url("../images/union/webster.jpg");
+ 
+#tour1 {
+ 
   width: 100%;
   background-repeat: no-repeat;
   background-position:  center center; 
@@ -495,15 +495,20 @@ header .fullheight .hgroup p img {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-}*/
+} 
 /* line 3, ../../../components/sass/_mixins.scss */
-#attractions:before, #attractions:after {
+#tour1:before, #tour1:after {
   content: '';
   display: table;
 }
 /* line 8, ../../../components/sass/_mixins.scss */
-#attractions:after {
+#tour1:after {
   clear: both;
+}
+#map-canvas { 
+  height: 100%; 
+  width: 100%
+
 }
 
 /* line 1, ../../../components/sass/modules/_footer.scss */

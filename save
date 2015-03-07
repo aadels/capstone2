@@ -1,16 +1,33 @@
 
 video#bgvid {
-position: fixed; right: 0; bottom: 0;
+
+right: 0; bottom: 0;
 min-width: 100%; min-height: 100%;
 width: auto; height: auto; z-index: -100;
 background: url(polina.jpg) no-repeat;
 background-size: cover;
 }
 
+<video autoplay loop poster="polina.jpg" id="bgvid">
+<source src="polina.webm" type="video/webm">
+<source src="polina.mp4" type="video/mp4">
+</video>
 
 
 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  float: left;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+  background-image: url("../images/union/barrister.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 
 
-
-
+fmstill3
