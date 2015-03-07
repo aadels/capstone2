@@ -10,7 +10,7 @@
   $('.50height').css('height', wheight * .50);
   $('.50width').css('width', wwidth * .50);
   $('.panelpic').css('width', wwidth * .25);
-  $("#bgvid2").width=document.body.offsetWidth;
+
 
   $(window).resize(function() {
   var wheight = $(window).height(); //get height of the window
@@ -20,7 +20,7 @@
   $('.50width').css('width', wwidth * .50);
   $('.fullwidth').css('width', wwidth);
   $('.panelpic').css('width', wwidth * .25);
-  $("#bgvid2").width=document.body.offsetWidth;
+
 
   }) //on resize
 
@@ -39,7 +39,7 @@
     } //location hostname
   }); //on click
 
-  // init controller for for Fluff and Building Tweens
+  // init controller for for Fluff , Events, and Building Tweens
     var controller2 = new ScrollMagic({
       globalSceneOptions: {
         triggerHook: "onLeave"
@@ -128,7 +128,67 @@
     .addTo(controller2);
 
 
+    //event tweens
+    var snowtween1 = TweenMax.staggerFromTo('#events .snowpic1', 2, 
+    { 
+      left: 125 + "%" 
+    }, 
+    {
+      left: 0 + "%",
+      delay: 16,
+      ease: Cubic.easeOut
+    });
 
+    var snowtween2 = TweenMax.staggerFromTo('#events .snowpic2', 2, 
+    { 
+      right: 150 + "%" 
+    }, 
+    {
+      right: 25 + "%" ,
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+    var snowtween3 = TweenMax.staggerFromTo('#events .snowpic3', 2, 
+    { 
+      left: 125 + "%" 
+    }, 
+    {
+      left: 25 + "%",
+      delay: 16,
+      ease: Cubic.easeOut
+    });
+
+        var snowtween4 = TweenMax.staggerFromTo('#events .snowpic4', 2, 
+    { 
+      bottom: -150 + "%",
+      left: 25 + "%"
+    }, 
+    {
+      bottom: 0 + "%",
+      left: 25 + "%",
+      delay: 18,
+      ease: Cubic.easeOut
+    });
+
+    var scene2 = new ScrollScene({triggerElement: '#events', duration: 15000}) 
+      .setPin("#events")
+      .addTo(controller2);
+    
+    var scene2f = new ScrollScene({triggerElement: '#events', duration: 8000}) 
+      .setTween(snowtween1)
+      .addTo(controller2);
+
+    var scene2g = new ScrollScene({triggerElement: '#events', duration: 9000}) 
+      .setTween(snowtween2)
+      .addTo(controller2);
+
+    var scene2h = new ScrollScene({triggerElement: '#events', duration: 10000}) 
+      .setTween(snowtween3)
+      .addTo(controller2);
+        
+    var scene2i = new ScrollScene({triggerElement: '#events', duration: 12000}) 
+      .setTween(snowtween4)
+      .addTo(controller2);
 
     //business tweens
     var colortween1 = TweenMax.staggerFromTo('#business .colorpic1', 7, 
@@ -179,89 +239,34 @@
       delay: 11,
       ease: Cubic.easeOut
     });
-    
-    var snowtween1 = TweenMax.staggerFromTo('#business .snowpic1', 2, 
-    { 
-      left: 125 + "%" 
-    }, 
-    {
-      left: 0 + "%",
-      delay: 16,
-      ease: Cubic.easeOut
-    });
 
-    var snowtween2 = TweenMax.staggerFromTo('#business .snowpic2', 2, 
-    { 
-      right: 150 + "%" 
-    }, 
-    {
-      right: 25 + "%" ,
-      delay: 15,
-      ease: Cubic.easeOut
-    });
-    var snowtween3 = TweenMax.staggerFromTo('#business .snowpic3', 2, 
-    { 
-      left: 125 + "%" 
-    }, 
-    {
-      left: 25 + "%",
-      delay: 16,
-      ease: Cubic.easeOut
-    });
-
-    var snowtween4 = TweenMax.staggerFromTo('#business .snowpic4', 2, 
-    { 
-      bottom: -150 + "%",
-      left: 25 + "%"
-    }, 
-    {
-      bottom: 0 + "%",
-      left: 25 + "%",
-      delay: 18,
-      ease: Cubic.easeOut
-    });
-
-    
+  
     //Create scenes, set pins, trigger when images are visible, and add to controller
-    var scene2 = new ScrollScene({triggerElement: '#business', duration: 20000}) 
+    var scene3 = new ScrollScene({triggerElement: '#business', duration: 20000}) 
       .setPin("#business")
       .addTo(controller2);
 
-    var scene2a = new ScrollScene({triggerElement: '#business', duration: 6000}) 
+    var scene3a = new ScrollScene({triggerElement: '#business', duration: 6000}) 
       .setTween(colortween1)
       .addTo(controller2);
 
-    var scene2b = new ScrollScene({triggerElement: '#business', duration: 9000}) 
+    var scene3b = new ScrollScene({triggerElement: '#business', duration: 9000}) 
       .setTween(buildingtween1)
       .addTo(controller2);
 
-    var scene2c = new ScrollScene({triggerElement: '#business', duration: 8000}) 
+    var scene3c = new ScrollScene({triggerElement: '#business', duration: 8000}) 
       .setTween(buildingtween2)
       .addTo(controller2);
 
-    var scene2d = new ScrollScene({triggerElement: '#business', duration: 7000}) 
+    var scene3d = new ScrollScene({triggerElement: '#business', duration: 7000}) 
       .setTween(buildingtween3)
       .addTo(controller2);
 
-    var scene2e = new ScrollScene({triggerElement: '#business', duration: 6000}) 
+    var scene3e = new ScrollScene({triggerElement: '#business', duration: 6000}) 
       .setTween(buildingtween4)
       .addTo(controller2);
 
-    var scene2f = new ScrollScene({triggerElement: '#business', duration: 12000}) 
-      .setTween(snowtween1)
-      .addTo(controller2);
-
-    var scene2g = new ScrollScene({triggerElement: '#business', duration: 13000}) 
-      .setTween(snowtween2)
-      .addTo(controller2);
-
-    var scene2h = new ScrollScene({triggerElement: '#business', duration: 14000}) 
-      .setTween(snowtween3)
-      .addTo(controller2);
-        
-    var scene21 = new ScrollScene({triggerElement: '#business', duration: 16000}) 
-      .setTween(snowtween4)
-      .addTo(controller2);
+    
 
 
     
@@ -283,7 +288,7 @@
             .addTo(controller);
     
     new ScrollScene({triggerElement: "#transit"})
-            .setTween(TweenMax.from("#transit > div", 1, {top: "-40%", ease: Linear.easeNone}))
+            .setTween(TweenMax.from("#transit > div", 1, {top: "-60%", ease: Linear.easeNone}))
             .addTo(controller);
 
     new ScrollScene({triggerElement: "#market1"})
@@ -295,7 +300,7 @@
             .addTo(controller);
     
     new ScrollScene({triggerElement: "#market3"})
-            .setTween(TweenMax.from("#market3 > div", 1, {top: "-40%", ease: Linear.easeNone}))
+            .setTween(TweenMax.from("#market3 > div", 1, {top: "-60%", ease: Linear.easeNone}))
             .addTo(controller);
 
 });

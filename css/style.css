@@ -402,7 +402,7 @@ header .fullheight .hgroup p img {
   overflow: hidden;
 }
 
-#market1 > div, #market2 > div, #market3 > div  {
+#market1 > div, #market2 > div, #market3 > div, #maps > div, #housing > div, #transit > div  {
   position: relative;
   height: 200%;
   -webkit-transform: translateZ(0);
@@ -462,18 +462,26 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 /* line 11, ../../../components/sass/modules/_business.scss */
-#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .snowpic4{
+#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #events .snowpic4{
   position: absolute;
   height: 100%;
   width: auto;
   overflow: hidden;
 }
-#community .lgpic3, #community .lgpic2, #business .snowpic1, #business .snowpic2, #business .snowpic3,#business .colorpic1{
+#community .lgpic3, #community .lgpic2, #events .snowpic1, #events .snowpic2, #events .snowpic3, #business .colorpic1{
   position: absolute;
   width: 100%;
   height: auto;
   overflow: hidden;
   bottom: 0;
+}
+#attractions .map{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  bottom: 0;
+
 }
 /* line 1, ../../../components/sass/modules/_attractions.scss 
 #attractions {
