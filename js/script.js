@@ -309,6 +309,15 @@ $(function() {
 $(window).resize(function(){
   location.reload();
 });
+
+  var kmlUrl = 'https://developers.google.com/maps/tutorials/kml/westcampus.kml';
+  var kmlOptions = {
+    suppressInfoWindows: true,
+    preserveViewport: false,
+    map: map
+  };
+  var kmlLayer = new google.maps.KmlLayer(kmlUrl, kmlOptions);
+
 //add tour stops
   var locations = [
     ['Union United', 42.381307, -71.099733, 10, 'http://player.vimeo.com/video/111527649'],
@@ -322,41 +331,32 @@ $(window).resize(function(){
     ['Arts, Culture and Community Resources', 42.379684, -71.093669, 2,'http://player.vimeo.com/video/111529297'],
     ['Participatory Planning', 42.379332, -71.094231, 1,'http://player.vimeo.com/video/111531551']
   ];
-//Draw Map
-  google.maps.event.addDomListener(window, 'load', init);
-  function init() {
 
-//set map options
-    var mapOptions = {
-      zoom: 14,
-      scrollwheel: false,
+ var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
       center: new google.maps.LatLng(42.379198, -71.094261), // Union Square, Somerville, MA
-      
-//set map styles
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      //set map styles
       styles: [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"saturation":"-1"},{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.locality","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"1"}]},{"featureType":"administrative.neighborhood","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"28"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#66a8b8"},{"visibility":"on"}]}]
-    };
+    });
 
-
-
-   
+    var infowindow = new google.maps.InfoWindow();
 
     var marker, i;
 
     for (i = 0; i < locations.length; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
+        map: map,
+        clickable: true,
+        url:locations[i][4]
       });
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          window.location.href = this.url;
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+          window.location.href = marker.url;
         }
-      })(marker, i));  
-    
-    var mapElement = document.getElementById('map1');
-
-      // Create the Google Map as defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
-  }
-
-};
+      })(marker, i));
+    }

@@ -505,7 +505,7 @@ header .fullheight .hgroup p img {
 #tour1:after {
   clear: both;
 }
-#tour1 #map1 {  
+#tour1 #map {  
   width: 50%;
   height: 100%;
   float: left;
