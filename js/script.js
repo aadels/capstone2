@@ -60,19 +60,6 @@ $(function() {
       ease: Cubic.easeOut
     });
 
-    var flufftween2 = TweenMax.staggerFromTo('#community .smpic', 5, 
-    { 
-      right: 40 + "%",
-      bottom: 50 + "%",
-
-    }, 
-    {
-      right: 60 + "%",
-      bottom: 150 + "%",
-      delay: 17, 
-      ease: Cubic.easeOut
-    });
-
   var fluffdancertween = TweenMax.staggerFromTo('#community .lgpic', 3, 
     { 
       bottom: -150 + "%" 
@@ -111,19 +98,15 @@ $(function() {
     .setTween(flufftween)
     .addTo(controller2);
 
-  var scene1b = new ScrollScene({triggerElement: '#community', duration: 4000}) 
-    .setTween(flufftween2)
-    .addTo(controller2);
-  
-  var scene1c = new ScrollScene({triggerElement: '#community', duration: 1200}) 
+  var scene1b = new ScrollScene({triggerElement: '#community', duration: 1200}) 
     .setTween(fluffdancertween)
     .addTo(controller2);
 
-  var scene1d = new ScrollScene({triggerElement: '#community', duration: 6000}) 
+  var scene1c = new ScrollScene({triggerElement: '#community', duration: 6000}) 
     .setTween(fmtween1)
     .addTo(controller2);
 
-  var scene1e = new ScrollScene({triggerElement: '#community', duration: 8000}) 
+  var scene1d = new ScrollScene({triggerElement: '#community', duration: 8000}) 
     .setTween(fmtween2)
     .addTo(controller2);
 
@@ -310,14 +293,6 @@ $(window).resize(function(){
   location.reload();
 });
 
-  var kmlUrl = 'https://developers.google.com/maps/tutorials/kml/westcampus.kml';
-  var kmlOptions = {
-    suppressInfoWindows: true,
-    preserveViewport: false,
-    map: map
-  };
-  var kmlLayer = new google.maps.KmlLayer(kmlUrl, kmlOptions);
-
 //add tour stops
   var locations = [
     ['Union United', 42.381307, -71.099733, 10, 'http://player.vimeo.com/video/111527649'],
@@ -332,10 +307,11 @@ $(window).resize(function(){
     ['Participatory Planning', 42.379332, -71.094231, 1,'http://player.vimeo.com/video/111531551']
   ];
 
- var map = new google.maps.Map(document.getElementById('map'), {
+ var map1 = new google.maps.Map(document.getElementById('map1'), {
       zoom: 15,
       center: new google.maps.LatLng(42.379198, -71.094261), // Union Square, Somerville, MA
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false,
       //set map styles
       styles: [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"saturation":"-1"},{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.locality","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"1"}]},{"featureType":"administrative.neighborhood","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"28"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#66a8b8"},{"visibility":"on"}]}]
     });
@@ -347,7 +323,7 @@ $(window).resize(function(){
     for (i = 0; i < locations.length; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map,
+        map: map1,
         clickable: true,
         url:locations[i][4]
       });
@@ -355,8 +331,13 @@ $(window).resize(function(){
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
+          infowindow.open(map1, marker);
           window.location.href = marker.url;
         }
       })(marker, i));
-    }
+
+
+
+
+     
+}

@@ -237,18 +237,14 @@ header .fullheight .hgroup p img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 33.33333%;
+  width: 15%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
   float: left;
-  font-weight: 600;
-  font-family: 200 1.4em/1.4em "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  background: #DF4848;
+  
 }
-/* line 17, ../../../components/sass/modules/_nav.scss */
+/* line 17, ../../../components/sass/modules/_nav.scss 
 #nav .navbar .brand {
   color: #e3e5e5;
   text-decoration: none;
@@ -256,19 +252,14 @@ header .fullheight .hgroup p img {
   display: inline-block;
   padding: 10px;
   font-size: 1.8em;
-}
+}*/
 @media (max-width: 650px) {
   /* line 17, ../../../components/sass/modules/_nav.scss */
   #nav .navbar .brand {
-    font-size: 1.1em;
     padding: 10px;
   }
   /* line 28, ../../../components/sass/modules/_nav.scss */
 
-    #nav .navbar .brand span{
-    display: none;
-      text-align: center;
-  }
 }
 /* line 33, ../../../components/sass/modules/_nav.scss */
 #nav .navbar ul {
@@ -475,16 +466,9 @@ header .fullheight .hgroup p img {
   overflow: hidden;
   bottom: 0;
 }
-#tour1 .map{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  bottom: 0;
 
-}
  
-#tour1 {
+#tour1, #tour2 {
  
   width: 100%;
   background-repeat: no-repeat;
@@ -501,11 +485,22 @@ header .fullheight .hgroup p img {
   content: '';
   display: table;
 }
+
+#tour2:before, #tour2:after {
+  content: '';
+  display: table;
+}
+
 /* line 8, ../../../components/sass/_mixins.scss */
 #tour1:after {
   clear: both;
 }
-#tour1 #map {  
+
+#tour2:after {
+  clear: both;
+}
+
+#tour1 #map1 {  
   width: 50%;
   height: 100%;
   float: left;
@@ -513,12 +508,22 @@ header .fullheight .hgroup p img {
   border-width: medium;
   border-color: #fff;
 } 
+
 #tour1 #map2 {  
   width: 50%;
   height: 100%;
   float: right;
 } 
 
+#tour2 #map3 {  
+
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: medium;
+  border-color: #fff;
+
+} 
 
 /* line 1, ../../../components/sass/modules/_footer.scss */
 footer {
@@ -587,8 +592,10 @@ video#bgvid2 {
   min-width: 100%; min-height: 100%;
   background: url(../images/farmersmarket/fmstill4.jpg) no-repeat;
   background-size: cover;
+}
 
-
+iframe {
+  pointer-events: none;
 }
 /* .clearfix {
   &:before,
