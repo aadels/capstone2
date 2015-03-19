@@ -9,6 +9,20 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
+  <nav id="nav">
+      <div class="navbar">
+        <div class="brand"><img src='images/icons/navlogo.jpg'> </div>
+          <ul>
+            <li><a class="icon info" href="#intro"><span>info</span></a></li>
+            <li><a class="icon community" href="#community"><span>community</span></a></li>
+            <li><a class="icon business" href="#business"><span>business</span></a></li>
+            <li><a class="icon housing" href="#housing"><span>housing</span></a></li>
+            <li><a class="icon maps" href="#tour1"><span>maps</span></a></li>
+            <li><a class="icon events" href="#events"><span>events</span></a></li>
+          </ul>
+      </div>
+    
+    </nav>
   <header id="intro">
     <article class="fullheight">
       <div class="hgroup">
@@ -32,9 +46,10 @@
       <div class="lgpic3"> 
         <img id="fm1" class="fullwidth" src="images/farmersmarket/fm-usms1.jpg">  
       </div>
+      
     </article>
 
-    <section class="parallax"
+    <section class="parallax">
       <div class="spacer s0"></div>
       <div id="market1">
         <div class="spacerbkgd" style="background-image: url(images/farmersmarket/fm-afterhood1.jpg);"></div>     
@@ -44,9 +59,10 @@
       </div>
       <div class="spacer s0"></div>     
       <div id="market2"> 
-        <video autoplay loop poster="images/farmersmarket/fmstill4.jpg" id="bgvid2" >
-          <source src="video/farmersmarket/fmvideobg3.webm" type="video/webm">
-          <source src="video/farmersmarket/fmvideobg3.mp4" type="video/mp4">
+        <video autoplay loop poster="images/farmersmarket/fmclipstill.jpg" id="bgvid2" >
+          <source src="video/farmersmarket/fmclip.webm" type="video/webm">
+          <source src="video/farmersmarket/fmclip.mp4" type="video/mp4">
+            <source src="video/farmersmarket/fmclip.ogv" type="video/ogv">
         </video>
       </div>
       <div class="spacer s2">
@@ -61,6 +77,13 @@
   <div class="spacer s_viewport"></div> 
     
     <article class="fullheight" id="events">
+
+                 <a href="#test" class="sublime" data-autoresize="fill" data-settings="close-button-position:right">
+            <img src="images/icons/playimage.png" id="playicon" width="50" height="50" /></a>
+          <video id="test" poster="video/testvideo/testframe.jpg" width="2000" height="1125" title="Test Video" style="display:none" data-uid="test" data-autoresize="fill"  data-settings="uid:demo-lightbox-close-button-position; autoresize:fit;" preload="none">
+            <source src="video/testvideo/testvideo.mp4" data-quality="hd" />
+            <source src="video/testvideo/testvideo.webm" data-quality="hd" />
+          </video>
       <div class="fullwidth"> 
         <img id="snowday" class="snowpic1" src="images/snow/snowday3.jpg">  
       </div>
@@ -72,7 +95,8 @@
       </div>
       <div class="fullheight"> 
         <img id="snowmonster" class="snowpic4" src="images/snow/snowmonster.png">  
-      </div>  
+      </div>
+      
     </article>
 
     <article class="fullheight" id="business">
@@ -85,7 +109,7 @@
           <img id= "angelica" class="bldgpic4" src="images/bldg/angelica.jpg">  
       </div>
       <div class="panelpic">
-          <img id= "ebi" class="bldgpic3" src="images/bldg/ebi.jpg">  
+          <img id= "ebi" class="bldgpic3" src="images/bldg/ebi.JPG">  
       </div>
       <div class="panelpic">
           <img id= "asylum" class="bldgpic2" src="images/bldg/asylum.jpg">  
@@ -98,24 +122,18 @@
     
     <article class="fullheight" id="tour1">
       <div class="map" id="map1"></div>
-      <div class="map"id="map2"><p style="text-align: center;margin-top: 30px;">Second map will go here</p></div>
+      <div class="map"id="mapvid"></div>
+
     </article> 
     <article class="fullheight" id="tour2">
-      <iframe class="map" id="map3" frameborder="0" marginheight="0" marginwidth="0" src="http://www.arcgis.com/apps/MapTour/?appid=0ae221cddad54d91bb0b6d28d1779d48"></iframe>
 
     </article> 
-
     
-    <section class="parallax"
+    <section class="parallax">
       <div class="spacer s0"></div>
       <div id="housing">
         <div class="spacerbkgd" style="background-image: url(images/union/muralLarge.jpg);">
-          <a href="#test" class="sublime" data-autoresize="fill" data-settings="close-button-position:right">
-              <img src="images/icons/playimage.png" width="50" height="50" /></a>
-          <video id="test" poster="images/icons/groovesposter.png" width="2000" height="1125" title="Test Video" style="display:none" data-uid="test" data-autoresize="fill"  data-settings="uid:demo-lightbox-close-button-position; autoresize:fit;" preload="none">
-            <source src="video/davidweb.mp4" data-quality="hd" />
-            <source src="video/david.webmhd.webm" data-quality="hd" />
-          </video>
+
         </div>
       </div>
       <div class="spacer s1">
@@ -123,9 +141,11 @@
       </div>
       <div class="spacer s0"></div>     
       <div id="maps"> 
-        <div class="spacerbkgd" style="background-image: url(images/union/unionsquarecafe.jpg);"></div>
-      </div>
+        <div class="spacerbkgd" style="background-image: url(images/union/unionsquarecafe.jpg);">
 
+        </div>
+      </div>
+  
       <div class="spacer s2">
         <img class= "spacerpic"  src='images/union/skylineParallax2.jpg'>
 
@@ -137,20 +157,8 @@
       <div class="spacer s2"></div> 
   </section>
   <div class="spacer s_viewport"></div> 
+
     
-    <nav id="nav">
-      <div class="navbar">
-        <div class="brand"><img src='images/icons/mainlogo.png'> </div>
-          <ul>
-            <li><a class="icon info" href="#intro"><span>info</span></a></li>
-            <li><a class="icon community" href="#community"><span>community</span></a></li>
-            <li><a class="icon business" href="#business"><span>business</span></a></li>
-            <li><a class="icon housing" href="#housing"><span>housing</span></a></li>
-            <li><a class="icon maps" href="#maps"><span>maps</span></a></li>
-            <li><a class="icon events" href="#events"><span>events</span></a></li>
-          </ul>
-      </div>
-    </nav>
 
 </main>
 <footer>

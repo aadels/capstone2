@@ -39,7 +39,7 @@ $(function() {
     } //location hostname
   }); //on click
 
-  // init controller for for Fluff , Events, and Building Tweens
+  // init controller for for Fluff , Events, and, Building Tweens, and Map pages
     var controller2 = new ScrollMagic({
       globalSceneOptions: {
         triggerHook: "onLeave"
@@ -141,7 +141,7 @@ $(function() {
       ease: Cubic.easeOut
     });
 
-        var snowtween4 = TweenMax.staggerFromTo('#events .snowpic4', 2, 
+    var snowtween4 = TweenMax.staggerFromTo('#events .snowpic4', 2, 
     { 
       bottom: -150 + "%",
       left: 25 + "%"
@@ -152,6 +152,7 @@ $(function() {
       delay: 18,
       ease: Cubic.easeOut
     });
+
 
     var scene2 = new ScrollScene({triggerElement: '#events', duration: 15000}) 
       .setPin("#events")
@@ -172,6 +173,7 @@ $(function() {
     var scene2i = new ScrollScene({triggerElement: '#events', duration: 12000}) 
       .setTween(snowtween4)
       .addTo(controller2);
+
 
     //business tweens
     var colortween1 = TweenMax.staggerFromTo('#business .colorpic1', 7, 
@@ -249,11 +251,13 @@ $(function() {
       .setTween(buildingtween4)
       .addTo(controller2);
 
-    
+    var scene4a = new ScrollScene({triggerElement: '#tour1', duration: 500}) 
+      .setPin("#tour1")
+      .addTo(controller2);
 
-
-    
-
+    var scene4b = new ScrollScene({triggerElement: '#tour2', duration: 500}) 
+      .setPin("#tour2")
+      .addTo(controller2);
 
     // init controller for parallax
     var controller = new ScrollMagic({
@@ -325,19 +329,16 @@ $(window).resize(function(){
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map1,
         clickable: true,
-        url:locations[i][4]
+        url:locations[i][9]
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
-          infowindow.open(map1, marker);
-          window.location.href = marker.url;
-        }
+          infowindow.open("#mapvid");
+          mapvid.innerHTML = '<iframe style="width:100%;height:100%; height:100%;" frameborder="0" src="' + url + '"/>';},20;
+
+        
       })(marker, i));
 
-
-
-
-     
 }
