@@ -1,7 +1,7 @@
 $(function() {
 
   var isTouch = 'ontouchstart' in document.documentElement;
-
+  var topoffset = 0;
   //window height & width
   var wheight = $(window).height(); //get height of the window
   var wwidth = $(window).width(); //get width of the window
@@ -39,7 +39,8 @@ $(function() {
     } //location hostname
   }); //on click
 
-  // init controller for for Fluff , Events, and, Building Tweens, and Map pages
+
+  // init troller for for Fluff , Events, and, Building Tweens, and Map pages
     var controller2 = new ScrollMagic({
       globalSceneOptions: {
         triggerHook: "onLeave"
@@ -312,9 +313,11 @@ $(window).resize(function(){
   ];
 
  var map1 = new google.maps.Map(document.getElementById('map1'), {
-      zoom: 15,
-      center: new google.maps.LatLng(42.379198, -71.094261), // Union Square, Somerville, MA
+      zoom: 16,
+      center: new google.maps.LatLng(42.379198, -71.096366), // Union Square, Somerville, MA
+     disableDefaultUI: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+
       scrollwheel: false,
       //set map styles
       styles: [{"featureType":"administrative","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"saturation":"-1"},{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.locality","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"1"}]},{"featureType":"administrative.neighborhood","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"administrative.neighborhood","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"visibility":"off"},{"saturation":"28"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#66a8b8"},{"visibility":"on"}]}]
@@ -335,10 +338,41 @@ $(window).resize(function(){
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
-          infowindow.open("#mapvid");
-          mapvid.innerHTML = '<iframe style="width:100%;height:100%; height:100%;" frameborder="0" src="' + url + '"/>';},20;
+          infowindow.open('mapvid');
+          mapvid.innerHTML = '<iframe style="width:100%; height:100%;" frameborder="0" src="' + url + '"/>';},20;
 
         
       })(marker, i));
 
 }
+var n = $('#nav');
+var nb = $('.navbar');
+var nt = $('.navtab');
+
+$(document).ready(function() {
+        $('.navtab').click(function() {
+          $('.navbar').slideToggle();
+            $('.navbar').css('display: block');
+        });
+    
+    /*$(document).mouseup(function (e) { 
+      if (!nb.is(e.target) && !nt.is(e.target) // if the target of the click isn't the navbar..
+         && nb.has(e.target).length === 0) // ... nor a descendant of the navbar
+      {
+          nb.hide('slow');
+      }
+    });*/
+
+});
+
+$(window).scroll(function () {
+        if( $(this).scrollTop() > 0) {
+          nt.addClass("nav-scrolled");
+          n.addClass("nav-scrolled");
+
+        } else {
+          nt.addClass("nav-scrolled");
+          n.addClass("nav-scrolled");
+
+        }
+      });
