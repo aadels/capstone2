@@ -226,7 +226,6 @@ header .fullheight .hgroup p img {
   display: inline-block;
   width: 10%;
   margin: 2%;
-
   float: left;
 
 }
@@ -315,6 +314,20 @@ header .fullheight .hgroup p img {
   }
    #nav .brand {
     display: none;
+  }
+
+  footer #socialmedia, footer #links {
+  text-align: center;
+  display: block;
+  padding: 10px;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  footer .group ul li a::after {
+    content: '\000a0';
+    display: block;
   }
 }
 @media (min-width: 650px) and (max-width: 960px) {
@@ -428,7 +441,7 @@ header .fullheight .hgroup p img {
   overflow: hidden;
   padding: 0;
   z-index: 1;
-  background-image: url("../images/union/barrister.jpg");
+  background-image: url("../images/union/oldunion.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -442,25 +455,26 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 
-#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #events .snowpic4{
+#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .bwpic1, #business .bwpic2, #business .bwpic3, #business .bwpic4, #business .amespic1, #business .amespic1, #business .amespic2, #business .amespic3, #business .amespic1, #events .snowpic4{
   position: absolute;
   height: 100%;
   width: auto;
   overflow: hidden;
 }
-#community .lgpic3, #community .lgpic2, #events .snowpic1, #events .snowpic2, #events .snowpic3, #business .colorpic1{
+#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .slidepic2, #business .slidepic3{
   position: absolute;
   width: 100%;
   height: auto;
   overflow: hidden;
   bottom: 0;
 }
+
+
 img#playicon {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+}
+#events .text{
+    position: absolute;
 }
  
 #tour1, #tour2 {
@@ -530,7 +544,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   background: #333333;
-  padding: 30px 0;
+  padding: 30px;
 }
 
 footer:after {
@@ -541,13 +555,19 @@ footer:after {
 
 footer #socialmedia {
   text-align: center;
+  float: right;
+}
+footer #links{
+  text-align: center;
+  float: left;
 }
 
-footer #socialmedia ul {
+footer #socialmedia ul, footer #links ul  {
   list-style: none;
 }
 
-footer #socialmedia ul li {
+
+footer #socialmedia ul li, footer #links ul li {
   display: inline-block;
   padding: 0 10px;
 }
@@ -557,6 +577,10 @@ footer #socialmedia ul li img {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+footer #links ul li a{
+   color: #fff;
 }
 
 
@@ -591,5 +615,4 @@ video#bgvid2 {
   background: url(../images/farmersmarket/fmstill4.jpg) no-repeat;
   background-size: cover;
 }
-
 

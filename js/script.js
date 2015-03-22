@@ -9,16 +9,19 @@ $(function() {
   $('.fullwidth').css('width', wwidth);
   $('.50height').css('height', wheight * .50);
   $('.50width').css('width', wwidth * .50);
+  $('.15width').css('width', wwidth * .15);
   $('.panelpic').css('width', wwidth * .25);
+
 
 
   $(window).resize(function() {
   var wheight = $(window).height(); //get height of the window
   var wwidth = $(window).width(); //get width of the window
   $('.fullheight').css('height', wheight);
+  $('.fullwidth').css('width', wwidth);
   $('.50height').css('height', wheight * .50);
   $('.50width').css('width', wwidth * .50);
-  $('.fullwidth').css('width', wwidth);
+  $('.15width').css('width', wwidth * .15);
   $('.panelpic').css('width', wwidth * .25);
 
 
@@ -56,7 +59,7 @@ $(function() {
     }, 
     {
       right: 40 + "%",
-      bottom: 50 + "%",
+      bottom: 45 + "%",
       delay: 9, 
       ease: Cubic.easeOut
     });
@@ -113,7 +116,7 @@ $(function() {
 
 
     //event tweens
-    var snowtween1 = TweenMax.staggerFromTo('#events .snowpic1', 2, 
+    var snowtween1 = TweenMax.staggerFromTo('#events .slidepic1', 2, 
     { 
       left: 125 + "%" 
     }, 
@@ -154,6 +157,29 @@ $(function() {
       ease: Cubic.easeOut
     });
 
+    var playertween = TweenMax.staggerFromTo('#events #playicon', 3, 
+    { 
+      left: 125 + "%", 
+      bottom: 70 + "%"
+    }, 
+    {
+      left: 55 + "%",
+      bottom: 70 + "%",
+      delay: 20,
+      ease: Cubic.easeOut
+    });
+
+    var texttween = TweenMax.staggerFromTo('#events #eventstext', 3, 
+    { 
+      right: 125 + "%", 
+      bottom: 50 + "%"
+    }, 
+    {
+      right: 50 + "%",
+      bottom: 50 + "%",
+      delay: 20,
+      ease: Cubic.easeOut
+    });
 
     var scene2 = new ScrollScene({triggerElement: '#events', duration: 15000}) 
       .setPin("#events")
@@ -175,6 +201,14 @@ $(function() {
       .setTween(snowtween4)
       .addTo(controller2);
 
+    var scene2j = new ScrollScene({triggerElement: '#events', duration: 14000}) 
+      .setTween(playertween)
+      .addTo(controller2);
+
+    var scene2k = new ScrollScene({triggerElement: '#events', duration: 14000}) 
+      .setTween(texttween)
+      .addTo(controller2);
+
 
     //business tweens
     var colortween1 = TweenMax.staggerFromTo('#business .colorpic1', 7, 
@@ -185,50 +219,172 @@ $(function() {
       opacity: .75,
       delay: 2,
     });
+    var slidetween1 = TweenMax.staggerFromTo('#business .slidepic2', 6, 
+    { 
+      right: 125 + "%" 
+    }, 
+    {
+      right: 0 + "%",
+      delay: 4,
+      ease: Cubic.easeOut
+    });
+
+    var colortween2 = TweenMax.staggerFromTo('#business .colorpic2', 7, 
+    { 
+      right: 0 + "%",
+      opacity: 0
+    }, 
+    {
+      right: 0 + "%",
+      opacity: .75,
+      delay: 8,
+    });
+    var bwtween1 = TweenMax.staggerFromTo('#business .bwpic1', 3, 
+    { 
+      left: 150 + "%" 
+    }, 
+    {
+      left:75 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var bwtween2 = TweenMax.staggerFromTo('#business .bwpic2', 7, 
+    { 
+      left:150 + "%"
+
+    }, 
+    {
+      left:50 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var bwtween3 = TweenMax.staggerFromTo('#business .bwpic3', 11, 
+    { 
+      left:150 + "%"
+    }, 
+    {
+      left: 25 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var bwtween4 = TweenMax.staggerFromTo('#business .bwpic4', 15, 
+    { 
+      left:150 + "%"
+    }, 
+    {
+      left: 0 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var amestween1 = TweenMax.staggerFromTo('#business .slidepic3', 6, 
+    { 
+      left: 0 + "%",
+      top: -150 + "%" 
+    }, 
+    {
+      left: 0 + "%",
+      top: 0 + "%" ,
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var amestween2 = TweenMax.staggerFromTo('#business .amespic1', 3, 
+    { 
+      bottom: -150 + "%", 
+      right: 75 + "%" 
+    }, 
+    {
+      bottom: 0,
+      right: 75 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var amestween3 = TweenMax.staggerFromTo('#business .amespic2', 7, 
+    { 
+      top: -150 + "%",
+      right:50 + "%"
+
+    }, 
+    {
+      top: 0 + "%" ,
+      right: 50 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var amestween4 = TweenMax.staggerFromTo('#business .amespic3', 11, 
+    { 
+      bottom: -150 + "%",
+      right: 25 + "%" 
+    }, 
+    {
+      bottom: 0,
+      right: 25 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
+    var amestween5 = TweenMax.staggerFromTo('#business .amespic4', 15, 
+    { 
+      top: -150 + "%",
+      right: 0 + "%"
+    }, 
+    {
+      top: 0 + "%" ,      
+      right: 0 + "%",
+      delay: 15,
+      ease: Cubic.easeOut
+    });
+
     var buildingtween1 = TweenMax.staggerFromTo('#business .bldgpic1', 3, 
     { 
       right: 150 + "%" 
     }, 
     {
       right:75 + "%",
-      delay: 11,
+      delay: 15,
       ease: Cubic.easeOut
     });
 
-    var buildingtween2 = TweenMax.staggerFromTo('#business .bldgpic2', 4, 
+    var buildingtween2 = TweenMax.staggerFromTo('#business .bldgpic2', 7, 
     { 
       right:150 + "%"
 
     }, 
     {
       right:50 + "%",
-      delay: 11,
+      delay: 15,
       ease: Cubic.easeOut
     });
 
-    var buildingtween3 = TweenMax.staggerFromTo('#business .bldgpic3', 5, 
+    var buildingtween3 = TweenMax.staggerFromTo('#business .bldgpic3', 11, 
     { 
       right:150 + "%"
     }, 
     {
       right: 25 + "%",
-      delay: 11,
+      delay: 15,
       ease: Cubic.easeOut
     });
 
-    var buildingtween4 = TweenMax.staggerFromTo('#business .bldgpic4', 10, 
+    var buildingtween4 = TweenMax.staggerFromTo('#business .bldgpic4', 15, 
     { 
       right:150 + "%"
     }, 
     {
       right: 0 + "%",
-      delay: 11,
+      delay: 15,
       ease: Cubic.easeOut
     });
 
   
     //Create scenes, set pins, trigger when images are visible, and add to controller
-    var scene3 = new ScrollScene({triggerElement: '#business', duration: 20000}) 
+    var scene3 = new ScrollScene({triggerElement: '#business', duration: 450000}) 
       .setPin("#business")
       .addTo(controller2);
 
@@ -236,19 +392,64 @@ $(function() {
       .setTween(colortween1)
       .addTo(controller2);
 
-    var scene3b = new ScrollScene({triggerElement: '#business', duration: 9000}) 
+    var scene3b = new ScrollScene({triggerElement: '#business', duration: 13000}) 
+      .setTween(slidetween1)
+      .addTo(controller2);
+
+    var scene3c = new ScrollScene({triggerElement: '#business', duration: 25000}) 
+      .setTween(colortween2)
+      .addTo(controller2);
+
+    var scene3d = new ScrollScene({triggerElement: '#business', duration: 40000}) 
+      .setTween(bwtween1)
+      .addTo(controller2);
+
+    var scene3e = new ScrollScene({triggerElement: '#business', duration: 41000}) 
+      .setTween(bwtween2)
+      .addTo(controller2);
+
+    var scene3f = new ScrollScene({triggerElement: '#business', duration: 42000}) 
+      .setTween(bwtween3)
+      .addTo(controller2);
+
+    var scene3g = new ScrollScene({triggerElement: '#business', duration: 43000}) 
+      .setTween(bwtween4)
+      .addTo(controller2);
+
+    var scene3h = new ScrollScene({triggerElement: '#business', duration: 75000}) 
+      .setTween(amestween1)
+      .addTo(controller2);
+
+    var scene3i = new ScrollScene({triggerElement: '#business', duration: 130000}) 
+      .setTween(amestween2)
+      .addTo(controller2);
+
+    var scene3j = new ScrollScene({triggerElement: '#business', duration: 133000}) 
+      .setTween(amestween3)
+      .addTo(controller2);
+
+    var scene3k = new ScrollScene({triggerElement: '#business', duration: 132000}) 
+      .setTween(amestween4)
+      .addTo(controller2);
+
+    var scene3l = new ScrollScene({triggerElement: '#business', duration: 131000}) 
+      .setTween(amestween5)
+      .addTo(controller2);
+
+
+    var scene3m = new ScrollScene({triggerElement: '#business', duration: 300000}) 
       .setTween(buildingtween1)
       .addTo(controller2);
 
-    var scene3c = new ScrollScene({triggerElement: '#business', duration: 8000}) 
+    var scene3n = new ScrollScene({triggerElement: '#business', duration: 301000}) 
       .setTween(buildingtween2)
       .addTo(controller2);
 
-    var scene3d = new ScrollScene({triggerElement: '#business', duration: 7000}) 
+    var scene3o = new ScrollScene({triggerElement: '#business', duration: 302000}) 
       .setTween(buildingtween3)
       .addTo(controller2);
 
-    var scene3e = new ScrollScene({triggerElement: '#business', duration: 6000}) 
+    var scene3p = new ScrollScene({triggerElement: '#business', duration: 303000}) 
       .setTween(buildingtween4)
       .addTo(controller2);
 
@@ -300,16 +501,16 @@ $(window).resize(function(){
 
 //add tour stops
   var locations = [
-    ['Union United', 42.381307, -71.099733, 10, 'http://player.vimeo.com/video/111527649'],
-    ['Affordable Housing', 42.380508, -71.100172, 9,'http://player.vimeo.com/video/111537719'],
-    ['Local Jobs and Workers Rights', 42.380746,    -71.098092, 8,'http://player.vimeo.com/video/111542966'],
-    ['Small Business Protection', 42.38011, -71.097088, 7,'http://player.vimeo.com/video/111544069'],
-    ['History of Community Organizing', 42.379674, -71.096366, 6,'http://player.vimeo.com/video/111551065'],
-    ['Green Space', 42.377, -71.096093, 5,'http://player.vimeo.com/video/111554655'],
-    ['Green Line Extension', 42.376768, -71.095627, 4,'http://player.vimeo.com/video/111555617'],
-    ['Public Safety', 42.378882, -71.092666, 3,'http://player.vimeo.com/video/111558282'],
-    ['Arts, Culture and Community Resources', 42.379684, -71.093669, 2,'http://player.vimeo.com/video/111529297'],
-    ['Participatory Planning', 42.379332, -71.094231, 1,'http://player.vimeo.com/video/111531551']
+    ['Union United', 42.381307, -71.099733, 1, 'https://player.vimeo.com/video/111527649?byline=0&portrait=0'],
+    ['Affordable Housing', 42.380508, -71.100172, 2,'https://player.vimeo.com/video/111537719'],
+    ['Local Jobs and Workers Rights', 42.380746,    -71.098092, 3,'https://player.vimeo.com/video/111542966'],
+    ['Small Business Protection', 42.38011, -71.097088, 4,'https://player.vimeo.com/video/111544069'],
+    ['History of Community Organizing', 42.379674, -71.096366, 5,'https://player.vimeo.com/video/111551065'],
+    ['Green Space', 42.377, -71.096093, 6,'https://player.vimeo.com/video/111554655'],
+    ['Green Line Extension', 42.376768, -71.095627, 7,'https://player.vimeo.com/video/111555617'],
+    ['Public Safety', 42.378882, -71.092666, 8,'https://player.vimeo.com/video/111558282'],
+    ['Arts, Culture and Community Resources', 42.379684, -71.093669, 9,'https://player.vimeo.com/video/111529297'],
+    ['Participatory Planning', 42.379332, -71.094231, 10,'https://player.vimeo.com/video/111531551']
   ];
 
  var map1 = new google.maps.Map(document.getElementById('map1'), {
