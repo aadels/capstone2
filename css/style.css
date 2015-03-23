@@ -258,11 +258,11 @@ header .fullheight .hgroup p img {
 }
 
 #nav .navbar ul li a {
-  color: #e3e5e5;
+  color: #fff;
   font: 200 1em/1.5em "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   display: inline-block;
-  padding: 10px 10px 10px 45px;
+  padding: 10px 10px 10px 40px;
   text-decoration: none;
   background-size: 30px;
   background-repeat: no-repeat;
@@ -455,13 +455,13 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 
-#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .bwpic1, #business .bwpic2, #business .bwpic3, #business .bwpic4, #business .amespic1, #business .amespic1, #business .amespic2, #business .amespic3, #business .amespic1, #events .snowpic4{
+#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .bwpic1, #business .bwpic2, #business .bwpic3, #business .bwpic4, #business .amespic1, #business .amespic2, #business .amespic3, #business .amespic4, #events .snowpic4{
   position: absolute;
   height: 100%;
   width: auto;
   overflow: hidden;
 }
-#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .slidepic2, #business .slidepic3{
+#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .slidepic2, #business .slidepic3, #business .slidepic4{
   position: absolute;
   width: 100%;
   height: auto;
@@ -615,4 +615,3 @@ video#bgvid2 {
   background: url(../images/farmersmarket/fmstill4.jpg) no-repeat;
   background-size: cover;
 }
-
