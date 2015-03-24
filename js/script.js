@@ -472,9 +472,9 @@ $(function() {
       .setPin("#tour1")
       .addTo(controller2);
 
-    var scene4b = new ScrollScene({triggerElement: '#tour2', duration: 500}) 
+    /*var scene4b = new ScrollScene({triggerElement: '#tour2', duration: 500}) 
       .setPin("#tour2")
-      .addTo(controller2);
+      .addTo(controller2);*/
 
     // init controller for parallax
     var controller = new ScrollMagic({
@@ -549,19 +549,24 @@ $(window).resize(function(){
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map1,
         clickable: true,
-        url:locations[i][9]
+        url:locations[i][4]
       });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open('mapvid');
-          mapvid.innerHTML = '<iframe style="width:100%; height:100%;" frameborder="0" src="' + url + '"/>';},20;
+      // google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      //   return function() {
+      //     infowindow.setContent(locations[i][0]);
+      //     //infowindow.open("#mapvid", marker);
+      //     $('#mapvid'.innerHTML = '<iframe style="width:100%;height:100%;" frameborder="0" src="' + url + '" />'; },20);
 
-        
-      })(marker, i));
+      //   }
+      // })(marker, i));
 
+    google.maps.event.addListener(marker, 'click', function() {
+    $('#mapvid').html('<iframe style="width:100%;height:100%;" frameborder="0" src="' + this.url + '" />');
+  });
 }
+
+
 var n = $('#nav');
 var nb = $('.navbar');
 var nt = $('.navtab');
