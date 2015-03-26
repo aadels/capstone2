@@ -51,7 +51,7 @@ $(function() {
         triggerHook: "onLeave"
       }
     });
-    
+
  //fluff tweens
   var flufftween = TweenMax.staggerFromTo('#community .smpic', 5, 
     { 
@@ -96,6 +96,8 @@ $(function() {
     });
 
   ////Create scenes, set pins, trigger when images are visible, and add to controller
+
+
   var scene1 = new ScrollScene({triggerElement: "#community", duration: 9000})
     .setPin("#community")
     .addTo(controller2);

@@ -149,7 +149,7 @@ body {
 }
 
 header .fullheight {
-  background-image: url("../images/union/muralLarge.jpg");
+  background-image: url("../images/header/blue.png");
   background-repeat: no-repeat;
   background-position:  center center; 
   background-size: cover;
@@ -159,42 +159,6 @@ header .fullheight {
   -webkit-justify-content: center;
   justify-content: center;
 
-}
-
-header .fullheight .hgroup {
-  padding: 100px 0;
-}
-
-header .fullheight .hgroup h1 {
-  color: #e3e5e5;
-  font-size: 5em;
-  font-weight: 800;
-  line-height: .8em;
-  text-shadow: #000000 0 0 20px;
-  text-align: center;
-}
-
-header .fullheight .hgroup h2 {
-  display: block;
-  color: #e3e5e5;
-  width: 60%;
-  max-width: 200px;
-  margin: 0 auto;
-  text-align: center;
-  border: 1px solid #e3e5e5;
-  margin-top: 15px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 1.3em;
-}
-
-header .fullheight .hgroup p {
-  text-align: center;
-}
-
-header .fullheight .hgroup p img {
-  padding-top: 50px;
-  max-width: 50px;
 }
 
 #nav {
@@ -382,6 +346,36 @@ header .fullheight .hgroup p img {
   position: absolute;
 }
 
+#opener {
+   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+  background-image: url("../images/header/blue.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#opener:before, #opener:after {
+  content: '';
+  display: table;
+}
+
+#opener:after {
+  clear: both;
+}
+
+
+.opener1 #roadsoutline{
+  z-index: 20;
+}
+
 #maps, #housing, #transit, #market1, #market2, #market3 {
   position: relative;
   overflow: hidden;
@@ -455,7 +449,7 @@ header .fullheight .hgroup p img {
   clear: both;
 }
 
-#business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .bwpic1, #business .bwpic2, #business .bwpic3, #business .bwpic4, #business .amespic1, #business .amespic2, #business .amespic3, #business .amespic4, #events .snowpic4{
+ #business .bldgpic1, #business .bldgpic2, #business .bldgpic3, #business .bldgpic4, #business .bwpic1, #business .bwpic2, #business .bwpic3, #business .bwpic4, #business .amespic1, #business .amespic2, #business .amespic3, #business .amespic4, #events .snowpic4{
   position: absolute;
   height: 100%;
   width: auto;
@@ -468,7 +462,15 @@ header .fullheight .hgroup p img {
   overflow: hidden;
   bottom: 0;
 }
+#opener .opener1{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 
+  float: left;
+
+}
 
 img#playicon {
   position: absolute;
