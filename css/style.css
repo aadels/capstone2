@@ -106,27 +106,23 @@ body {
 }
 
 
-.scene {
-  position: relative;
-  padding: 0;
-  background-repeat: no-repeat;
-}
-/
-.scene .pic {
-  margin: 0;
-}
-
-.scene article {
+article {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  padding: 0;
 }
 
-.scene article:after {
+article:after {
   content: " ";
   display: block;
   clear: both;
 }
+ article .pic {
+  margin: 0;
+}
+
 @media (min-width: 1200px) {
 
   .scene {
@@ -146,19 +142,6 @@ body {
     display: block;
     clear: both;
   }
-}
-
-header .fullheight {
-  background-image: url("../images/header/blue.png");
-  background-repeat: no-repeat;
-  background-position:  center center; 
-  background-size: cover;
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-
 }
 
 #nav {
@@ -362,6 +345,42 @@ header .fullheight {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+#mainlogo {
+  width: 30%;
+  position: absolute;
+  left: 35%;
+  top: 15%;
+  z-index: 4;
+  position: absolute;
+}
+#star {
+  width: 5%;
+  position: absolute;
+  left: 52%;
+  top: 42%;
+  z-index: 4;
+
+}
+
+#roads {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  float: left;
+  z-index: 3;
+}
+
+#scroll {
+  position: absolute;
+  width: 10%;
+  bottom: 5%;
+    left: 44%;
+  height: auto;
+  z-index: 4;
+}
+
 #opener:before, #opener:after {
   content: '';
   display: table;
@@ -371,10 +390,6 @@ header .fullheight {
   clear: both;
 }
 
-
-.opener1 #roadsoutline{
-  z-index: 20;
-}
 
 #maps, #housing, #transit, #market1, #market2, #market3 {
   position: relative;
@@ -462,15 +477,7 @@ header .fullheight {
   overflow: hidden;
   bottom: 0;
 }
-#opener .opener1{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
 
-  float: left;
-
-}
 
 img#playicon {
   position: absolute;

@@ -11,6 +11,7 @@ $(function() {
   $('.50width').css('width', wwidth * .50);
   $('.15width').css('width', wwidth * .15);
   $('.panelpic').css('width', wwidth * .25);
+  $('#mainlogo').css('width', wwidth * .30);
 
 
 
@@ -23,12 +24,19 @@ $(function() {
   $('.50width').css('width', wwidth * .50);
   $('.15width').css('width', wwidth * .15);
   $('.panelpic').css('width', wwidth * .25);
+  $('#mainlogo').css('width', wwidth * .30);
   $('#width').text(wwidth);
   $('#height').text(wheight);
 
 
-  }) //on resize
 
+}) //on resize
+//$("#mainlogo").bind("load", function () { $(this).fadeIn("slow"); });
+$('#roads').hide().fadeIn(3000);
+$('#mainlogo').hide().delay(3000).fadeIn(1000);
+$('#star').hide().delay(4000).fadeIn(10);
+$('.navtab').hide().delay(5000).fadeIn(500);
+$('#scroll').hide().delay(6000).fadeIn(500);
 
 // Animated Scrolling
   $('a[href*=#]:not([href=#])').click(function() {
