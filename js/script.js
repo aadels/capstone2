@@ -442,7 +442,7 @@ $('#scroll').hide().delay(5000).fadeIn(500);
 
   
     //Create scenes, set pins, trigger when images are visible, and add to controller
-    var scene3 = new ScrollScene({triggerElement: '#business', duration: 7000000}) 
+    var scene3 = new ScrollScene({triggerElement: '#business', duration: 8000000}) 
       .setPin("#business")
       .addTo(controller2);
 
