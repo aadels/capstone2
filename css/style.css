@@ -1,4 +1,6 @@
-
+#viewport{
+  z-index: 600:;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -122,6 +124,7 @@ article:after {
  article .pic {
   margin: 0;
 }
+
 
 @media (min-width: 1200px) {
 
@@ -346,7 +349,7 @@ article:after {
   background-repeat: no-repeat;
 }
 
-#mainlogo {
+#opener .fadeimg #mainlogo {
   width: 30%;
   position: absolute;
   left: 35%;
@@ -354,16 +357,16 @@ article:after {
   z-index: 4;
   position: absolute;
 }
-#star {
+#opener .fadeimg #star {
   width: 5%;
   position: absolute;
-  left: 52%;
-  top: 42%;
+  left: 51%;
+  top: 41%;
   z-index: 4;
-
+  padding: 1%;
 }
 
-#roads {
+#opener .fadeimg #roads {
   position: absolute;
   width: 100%;
   height: auto;
@@ -372,7 +375,7 @@ article:after {
   z-index: 3;
 }
 
-#scroll {
+#opener .fadeimg #scroll {
   position: absolute;
   width: 10%;
   bottom: 5%;
@@ -470,7 +473,14 @@ article:after {
   width: auto;
   overflow: hidden;
 }
-#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .slidepic2, #business .slidepic3, #business .slidepic4{
+ #business .artlogo1{
+  position: absolute;
+  width: 25%;
+  height: auto;
+  overflow: hidden;
+}
+
+#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .colorpic3, #business .slidepic2, #business .slidepic3, #business .slidepic4, #business .slidepic5{
   position: absolute;
   width: 100%;
   height: auto;

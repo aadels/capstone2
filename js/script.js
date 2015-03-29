@@ -33,10 +33,10 @@ $(function() {
 }) //on resize
 //$("#mainlogo").bind("load", function () { $(this).fadeIn("slow"); });
 $('#roads').hide().fadeIn(3000);
-$('#mainlogo').hide().delay(3000).fadeIn(1000);
-$('#star').hide().delay(4000).fadeIn(10);
-$('.navtab').hide().delay(5000).fadeIn(500);
-$('#scroll').hide().delay(6000).fadeIn(500);
+$('#mainlogo').hide().delay(3000).fadeIn(500);
+$('#star').hide().delay(3500).fadeIn(10);
+$('.navtab').hide().delay(4000).fadeIn(500);
+$('#scroll').hide().delay(5000).fadeIn(500);
 
 // Animated Scrolling
   $('a[href*=#]:not([href=#])').click(function() {
@@ -251,6 +251,7 @@ $('#scroll').hide().delay(6000).fadeIn(500);
       opacity: .75,
       delay: 8,
     });
+
     var bwtween1 = TweenMax.staggerFromTo('#business .bwpic1', 3, 
     { 
       left: 150 + "%" 
@@ -363,6 +364,40 @@ $('#scroll').hide().delay(6000).fadeIn(500);
       ease: Cubic.easeOut
     });
 
+    var arttween1 = TweenMax.staggerFromTo('#business .slidepic5', 2, 
+    { 
+      right: 125 + "%" 
+    }, 
+    {
+      right: 0 + "%",
+      delay: 5,
+      ease: Cubic.easeOut
+    });
+
+    var arttween2 = TweenMax.staggerFromTo('#business .artlogo1', 2, 
+    { 
+      left: 0 + "%" ,
+      top: -50 + "%"
+
+    }, 
+    {
+      left: 0 + "%",
+      top: 0 + "%",
+      delay: 5,
+      ease: Cubic.easeOut
+    });
+
+    var arttween3 = TweenMax.staggerFromTo('#business .colorpic3', 2, 
+    { 
+      right: 0 + "%",
+      opacity: 0
+    }, 
+    {
+      right: 0 + "%",
+      opacity: 1,
+      delay: 8,
+    });
+
     var buildingtween2 = TweenMax.staggerFromTo('#business .bldgpic1', 3, 
     { 
       right: 150 + "%" 
@@ -373,7 +408,7 @@ $('#scroll').hide().delay(6000).fadeIn(500);
       ease: Cubic.easeOut
     });
 
-    var buildingtween3 = TweenMax.staggerFromTo('#business .bldgpic2', 7, 
+    var buildingtween3 = TweenMax.staggerFromTo('#business .bldgpic2', 2, 
     { 
       right:150 + "%"
 
@@ -406,7 +441,7 @@ $('#scroll').hide().delay(6000).fadeIn(500);
 
   
     //Create scenes, set pins, trigger when images are visible, and add to controller
-    var scene3 = new ScrollScene({triggerElement: '#business', duration: 500000}) 
+    var scene3 = new ScrollScene({triggerElement: '#business', duration: 7000000}) 
       .setPin("#business")
       .addTo(controller2);
 
@@ -426,55 +461,68 @@ $('#scroll').hide().delay(6000).fadeIn(500);
       .setTween(bwtween1)
       .addTo(controller2);
 
-    var scene3e = new ScrollScene({triggerElement: '#business', duration: 41000}) 
+    var scene3e = new ScrollScene({triggerElement: '#business', duration: 50000}) 
       .setTween(bwtween2)
       .addTo(controller2);
 
-    var scene3f = new ScrollScene({triggerElement: '#business', duration: 42000}) 
+    var scene3f = new ScrollScene({triggerElement: '#business', duration: 60000}) 
       .setTween(bwtween3)
       .addTo(controller2);
 
-    var scene3g = new ScrollScene({triggerElement: '#business', duration: 43000}) 
+    var scene3g = new ScrollScene({triggerElement: '#business', duration: 70000}) 
       .setTween(bwtween4)
       .addTo(controller2);
 
-    var scene3h = new ScrollScene({triggerElement: '#business', duration: 75000}) 
+    var scene3h = new ScrollScene({triggerElement: '#business', duration: 150000}) 
       .setTween(amestween1)
       .addTo(controller2);
 
-    var scene3i = new ScrollScene({triggerElement: '#business', duration: 130000}) 
+    var scene3i = new ScrollScene({triggerElement: '#business', duration: 250000}) 
       .setTween(amestween2)
       .addTo(controller2);
 
-    var scene3j = new ScrollScene({triggerElement: '#business', duration: 133000}) 
+    var scene3j = new ScrollScene({triggerElement: '#business', duration: 280000}) 
       .setTween(amestween3)
       .addTo(controller2);
 
-    var scene3k = new ScrollScene({triggerElement: '#business', duration: 132000}) 
+    var scene3k = new ScrollScene({triggerElement: '#business', duration: 281000}) 
       .setTween(amestween4)
       .addTo(controller2);
 
-    var scene3l = new ScrollScene({triggerElement: '#business', duration: 131000}) 
+    var scene3l = new ScrollScene({triggerElement: '#business', duration: 282000}) 
       .setTween(amestween5)
       .addTo(controller2);
 
-    var scene3m = new ScrollScene({triggerElement: '#business', duration: 200000}) 
+    var scene3m = new ScrollScene({triggerElement: '#business', duration: 400000}) 
       .setTween(buildingtween1)
       .addTo(controller2);
 
-    var scene3n = new ScrollScene({triggerElement: '#business', duration: 350000}) 
+    var scene3n = new ScrollScene({triggerElement: '#business', duration: 500000}) 
+      .setTween(arttween1)
+      .addTo(controller2);
+
+    var scene3o = new ScrollScene({triggerElement: '#business', duration: 601000}) 
+      .setTween(arttween2)
+      .addTo(controller2);
+
+    var scene3p = new ScrollScene({triggerElement: '#business', duration: 2500000}) 
+      .setTween(arttween3)
+      .addTo(controller2);
+
+
+    var scene3q = new ScrollScene({triggerElement: '#business', duration: 7050000}) 
       .setTween(buildingtween2)
       .addTo(controller2);
 
-    var scene3o = new ScrollScene({triggerElement: '#business', duration: 351000}) 
+    var scene3r = new ScrollScene({triggerElement: '#business', duration: 7051000}) 
       .setTween(buildingtween3)
       .addTo(controller2);
 
-    var scene3p = new ScrollScene({triggerElement: '#business', duration: 352000}) 
+    var scene3s = new ScrollScene({triggerElement: '#business', duration: 7052000}) 
       .setTween(buildingtween4)
       .addTo(controller2);
 
-    var scene3q = new ScrollScene({triggerElement: '#business', duration: 353000}) 
+    var scene3t = new ScrollScene({triggerElement: '#business', duration: 7053000}) 
       .setTween(buildingtween5)
       .addTo(controller2);
 
@@ -617,4 +665,6 @@ $('#width').text(the_width);
 var the_height = $(window).height();
 $('#height').text(the_height);
 });*/
+
+
   
