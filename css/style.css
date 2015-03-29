@@ -328,7 +328,7 @@ article:after {
   clear: both;
 }
 
-#community .lgpic, #community .smpic {
+#community .lgpic, #community .smpic{
   position: absolute;
 }
 
@@ -480,12 +480,19 @@ article:after {
   overflow: hidden;
 }
 
-#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .colorpic3, #business .slidepic2, #business .slidepic3, #business .slidepic4, #business .slidepic5{
+#community .lgpic3, #community .lgpic2, #events .slidepic1, #events .snowpic2, #events .snowpic3, #business .colorpic1, #business .colorpic2, #business .colorpic3, #business .slidepic2, #business .slidepic3, #business .slidepic4, #business .slidepic5 {
   position: absolute;
   width: 100%;
   height: auto;
   overflow: hidden;
   bottom: 0;
+}
+#business .slidepic6 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
 }
 
 
